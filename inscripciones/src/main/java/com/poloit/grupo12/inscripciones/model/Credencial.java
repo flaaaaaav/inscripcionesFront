@@ -18,4 +18,10 @@ public class Credencial {
     @OneToOne
     @JoinColumn(name = "id_usuario", referencedColumnName = "id")
     private Usuario usuario;
+
+    public Credencial(String user, String pass, Usuario usuario) {
+        this.user = user;
+        this.pass = pass;
+        this.usuario = usuario;
+    }
 }
