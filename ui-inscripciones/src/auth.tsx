@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { UserDataType } from './types';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
 const clientId = '27875311198-j2cbmbhmid8llm2bu30be5s8dljret50.apps.googleusercontent.com';
 
 const Auth: React.FC = () => {
+  const initialUser = {
+    email: "",
+    email_verified: false,
+    family_name: "",
+    given_name: "",
+    name: "",
+    picture: "",
+    sub: ""
+  }
+
   const [isLogged, setIsLogged] = useState(false);
-  const [userData, setUserData] = useState<any>(null);
+  const [userData, setUserData] = useState<UserDataType>(initialUser);
 
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
@@ -52,7 +63,7 @@ const Auth: React.FC = () => {
     localStorage.removeItem('userData');
     localStorage.removeItem('isLogged');
     setIsLogged(false);
-    setUserData(null);
+    setUserData(initialUser);
   };
 
   return (
