@@ -1,14 +1,13 @@
-import './App.css'
-import { Auth } from './auth'
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes/Routes'; 
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <h1>Inscripciones</h1>
-      <Auth />
-    </>
-  )
-}
+    <Router>
+      <Routes />
+    </Router>
+  );
+};
 
-export default App
+export default App;

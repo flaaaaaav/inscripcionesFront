@@ -6,4 +6,5 @@ export type UserDataType = {
   name: string,
   picture: string,
   sub: string,
+  birthday: string,
 }
