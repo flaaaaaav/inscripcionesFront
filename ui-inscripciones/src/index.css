@@ -1,15 +1,19 @@
-:root {
-  /* Color Palette */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap');
 
-  --primary: '#0b7077';
-  --primary-dark: '#34495e';
-  --primary-light: '#d2e6e4';
-  --secondary: '#fd661f';
-  --background: '#fffefe';
+:root {
+  --primary: #0b7077;
+  --primary-dark: #34495e;
+  --primary-light: #d2e6e4;
+  --secondary: #fd661f;
+  --background: #fffefe;
+  --card-background: #fefefe;
+  --button-green: #0b7077;
+  --card-text: #4D4D4D;
+  --card-info: #777795;
 
   /* ------------- */
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,16 +27,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f4f4f8;
+  font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+    font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: #213547;
     background-color: #ffffff;
   }
