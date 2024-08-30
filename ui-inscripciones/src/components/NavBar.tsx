@@ -13,6 +13,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CustomButton from './customButton';
+import theme from '../theme';
 
 interface Props {
   window?: () => Window;
@@ -32,7 +33,7 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Punto&Aprende
       </Typography>
       <Divider />
       <List>
@@ -58,7 +59,7 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{py: "2rem", backgroundColor: theme.palette.primary.dark, boxShadow: "none"}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -67,27 +68,32 @@ export default function DrawerAppBar(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            <div style={{width: '16px'}}></div>
+            <div style={{width: '16px'}}>X</div>
+          <Typography variant="h6" sx={{ my: 2, ml: '2rem' }}>
+            Punto&Aprende
+          </Typography>
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, marginX: {lg: '7.5rem', md: "1rem"}, width: "0", display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Punto&Aprende
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{flexGrow: {lg: 1, md: 0.5}, gap: {lg:"4rem", md: "1rem",}, justifyContent: 'center', alignItems: "center", display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ color: '#fff', textTransform: 'none' }}>
                 {item}
               </Button>
             ))}
-            <CustomButton colorVariant="white" >
-          INICIAR SESION
-        </CustomButton>
-        <CustomButton colorVariant="green" >
-          REGISTRARSE
-        </CustomButton>
+          </Box>
+          <Box sx={{flexGrow: 0, display: { xs: "none", sm: "flex"}, flexDirection: {sm: "column", md: "row"}, gap: "1rem", justifyContent: "start"}}>
+            <CustomButton colorVariant="white" sx={{width: {md: "12.6rem", sm: "8rem" }, height: {md: "3.75rem", sm: "3rem"}, padding: {md: "20px 40px", sm: "5px 8px"}, color: theme.palette.primary.main}} >
+              INICIAR SESION
+            </CustomButton>
+            <CustomButton colorVariant="green" sx={{width: {md: "12.6rem", sm: "8rem" }, height: {md: "3.75rem", sm: "3rem"}, padding: {md: "20px 40px", sm: "5px 8px"}}} >
+              REGISTRARSE
+            </CustomButton>
           </Box>
         </Toolbar>
       </AppBar>
