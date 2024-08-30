@@ -80,7 +80,7 @@ export default function DrawerAppBar(props: Props) {
           >
             Punto&Aprende
           </Typography>
-          <Box sx={{flexGrow: {lg: 1, md: 0.5}, gap: {lg:"4rem", md: "1rem",}, justifyContent: 'center', alignItems: "center", display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={{flexGrow: {lg: 1, md: 0.5}, gap: {lg:"4rem", md: "1rem",}, justifyContent: {sm: "center", lg: "start"}, display: { xs: 'none', sm: 'flex' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff', textTransform: 'none' }}>
                 {item}
