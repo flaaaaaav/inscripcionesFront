@@ -114,7 +114,7 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ py: {md: "2.5rem", xs: "4rem"} }}>
         <Toolbar />
       </Box>
     </Box>
