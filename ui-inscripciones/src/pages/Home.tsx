@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth } from '../auth';
 import Button from '@mui/material/Button'
-import { Container } from '@mui/material';
 import CardCursos from '../components/cardCursos';
 import CustomButton from '../components/customButton';
+import NavBar from '../components/NavBar';
 
 
 const Home: React.FC = () => {
@@ -20,19 +20,8 @@ const Home: React.FC = () => {
   };
 
   return (
-    <Container>
-      <nav className='bg-dark'>
-        {/* Logo */}
-        <Container sx={{backgroundColor: '#34495e'}} >
-          <a>Inicio</a>
-          <a>Cursos</a>
-          <a>Proyectos</a>
-        </Container>
-        <div>
-          <Button variant='contained' color='secondary' sx={{backgroundColor: '#fff', color: '#0b7077'}} >INICIAR SESION</Button>
-          <Button variant='contained'>REGISTRARSE</Button>
-        </div>
-      </nav>
+    <div style={{width: '100vw'}}>
+      <NavBar />
       <section className='bg-dark'>
         <div>
           <span>Nunca pares de aprender</span>
@@ -53,19 +42,19 @@ const Home: React.FC = () => {
         buttonText="Inscribite"
       />
 
-<CustomButton colorVariant="green" >
-          Boton Verde
-        </CustomButton>
-        <CustomButton colorVariant="orange" >
-          Boton Naranja
-        </CustomButton>
-        <CustomButton colorVariant="white" >
-          Boton Blanco
-        </CustomButton>
+      <CustomButton colorVariant="green" >
+        Boton Verde
+      </CustomButton>
+      <CustomButton colorVariant="orange" >
+        Boton Naranja
+      </CustomButton>
+      <CustomButton colorVariant="white" >
+        Boton Blanco
+      </CustomButton>
 
       <Auth />
       <button onClick={handleProfileClick}>Perfil de usuario</button>
-    </Container>
+    </div>
   );
 };
 
