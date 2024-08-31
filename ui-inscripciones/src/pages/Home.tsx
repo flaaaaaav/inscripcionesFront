@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{width: '100vw'}}>
+    <div style={{}}>
       <NavBar />
       <section className='bg-dark'>
         <div>

@@ -20,6 +20,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,18 +30,14 @@
 
 html {
   font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
   background-color: #f4f4f8;
   font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 @media (prefers-color-scheme: light) {
