@@ -42,7 +42,7 @@ const Requeriments: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{}}>
+    <Box sx={{ margin: "0 auto"}}>
       <Box 
         display="flex" 
         flexDirection={{ xs: 'column', sm: 'row' }} 
@@ -50,6 +50,7 @@ const Requeriments: React.FC = () => {
         sx={{ 
           minWidth: '320px', 
           padding: 2,
+          margin: "0 auto",
         }} 
       >
         <Box 
@@ -99,7 +100,7 @@ const Requeriments: React.FC = () => {
                 </ListItemIcon>
                 <ListItemText 
                   primary={requisito} 
-                  primaryTypographyProps={{ fontSize: '14px' }}
+                  primaryTypographyProps={{ fontSize: '14px', color: "#696984"}}
                 />
               </ListItem>
             ))}

@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -45,55 +44,55 @@ export default function DrawerAppBar(props: Props) {
           </ListItem>
         ))}
       </List>
-      <CustomButton colorVariant="white" >
-        INICIAR SESION
-      </CustomButton>
-      <CustomButton colorVariant="green" >
-        REGISTRARSE
-      </CustomButton>
+      <CustomButton colorVariant="white">INICIAR SESION</CustomButton>
+      <CustomButton colorVariant="green">REGISTRARSE</CustomButton>
     </Box>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', margin: "0", height: "100px" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{py: "2rem", backgroundColor: theme.palette.primary.dark, boxShadow: "none"}}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <div style={{width: '16px'}}>X</div>
-          <Typography variant="h6" sx={{ my: 2, ml: '2rem' }}>
-            Punto&Aprende
-          </Typography>
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, marginX: {lg: '7.5rem', md: "1rem"}, width: "0", display: { xs: 'none', sm: 'block' } }}
-          >
-            Punto&Aprende
-          </Typography>
-          <Box sx={{flexGrow: {lg: 1, md: 0.5}, gap: {lg:"4rem", md: "1rem",}, justifyContent: {sm: "center", lg: "start"}, display: { xs: 'none', sm: 'flex' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', textTransform: 'none' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-          <Box sx={{flexGrow: 0, display: { xs: "none", sm: "flex"}, flexDirection: {sm: "column", md: "row"}, gap: "1rem", justifyContent: "start"}}>
-            <CustomButton colorVariant="white" sx={{width: {md: "12.6rem", sm: "8rem" }, height: {md: "3.75rem", sm: "3rem"}, padding: {md: "20px 40px", sm: "5px 8px"}, color: theme.palette.primary.main}} >
-              INICIAR SESION
-            </CustomButton>
-            <CustomButton colorVariant="green" sx={{width: {md: "12.6rem", sm: "8rem" }, height: {md: "3.75rem", sm: "3rem"}, padding: {md: "20px 40px", sm: "5px 8px"}}} >
-              REGISTRARSE
-            </CustomButton>
+      <AppBar component="nav" sx={{ py: "2rem", backgroundColor: theme.palette.primary.dark, boxShadow: "none" }}>
+        <Toolbar sx={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '1000px', margin: '0 auto', padding: '0 1rem' }}>
+            
+            <Box component="img" src="./src/media/logo-navbar.png" alt="Logo" sx={{ width: 'auto', display: { xs: 'none', sm: 'block' } }} />
+
+            
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '2rem' }}>
+              {navItems.map((item) => (
+                <Button key={item} sx={{ color: '#fff', textTransform: 'none', transition: 'color 0.3s ease', '&:hover': { color: theme.palette.secondary.main } }}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+
+            
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}>
+              <CustomButton
+                colorVariant="white-navbar"
+                sx={{
+                  '&:hover': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                INICIAR SESION
+              </CustomButton>
+              <CustomButton
+                colorVariant="green"
+                sx={{
+                  '&:hover': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  },
+                }}
+                  
+              >
+                REGISTRARSE
+              </CustomButton>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
@@ -114,9 +113,9 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ py: {md: "2.5rem", xs: "4rem"} }}>
+      <Box component="main" sx={{ py: { md: "2.5rem", xs: "4rem" } }}>
         <Toolbar />
       </Box>
     </Box>
   );
-} 
+}

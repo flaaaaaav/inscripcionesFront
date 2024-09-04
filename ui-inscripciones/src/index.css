@@ -19,30 +19,32 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #fff;
   
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
+/* Aplicar box-sizing predeterminado */
+*,
+*::before,
+*::after {
   
+  box-sizing: none; /* Valor predeterminado */
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  background-color: #f4f4f8;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f8;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: #213547;
     background-color: #ffffff;
   }

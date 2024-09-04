@@ -1,10 +1,9 @@
 import React from "react";
 import { Button as MUIButton, ButtonProps as MUIButtonProps } from "@mui/material";
 import { styled } from "@mui/system";
-//import theme from "../theme";
 
 interface CustomButtonProps extends MUIButtonProps {
-  colorVariant: "orange" | "green" | "white";
+  colorVariant: "orange" | "green" | "white" | "white-navbar";
 }
 
 const StyledButton = styled(MUIButton, { shouldForwardProp: (prop) => prop !== 'colorVariant' })<CustomButtonProps>(({ theme, colorVariant }) => ({
@@ -13,10 +12,12 @@ const StyledButton = styled(MUIButton, { shouldForwardProp: (prop) => prop !== '
     : colorVariant === "green"
     ? theme.palette.primary.main
     : "white",
-  color: colorVariant === "white"
+  color: colorVariant === "white" || colorVariant === "white-navbar"
     ? theme.palette.custom.buttonWhiteText
     : "#ffffff",
-  border: colorVariant === "white" ? `1px solid ${theme.palette.custom.buttonWhiteBorder}` : "none",
+  border: colorVariant === "white"
+    ? `1px solid ${theme.palette.custom.buttonWhiteBorder}`
+    : "none",
   borderRadius: "10px",
   padding: "12px 24px",
   textTransform: "none",
@@ -24,13 +25,13 @@ const StyledButton = styled(MUIButton, { shouldForwardProp: (prop) => prop !== '
   marginLeft: 3,
   fontWeight: "regular",
   "&:hover": {
-    backgroundColor: colorVariant === "white"
+    backgroundColor: colorVariant === "white" || colorVariant === "white-navbar"
       ? theme.palette.primary.main
       : colorVariant === "orange"
       ? theme.palette.secondary.dark
       : theme.palette.primary.dark,
-    color: colorVariant === "white" ? "#ffffff" : undefined,
-    border: colorVariant === "white" ? `1px solid #ffffff` : undefined,
+    color: colorVariant === "white" || colorVariant === "white-navbar" ? "#ffffff" : undefined,
+    border: colorVariant === "white" ? `1px solid #ffffff` : "none",
   },
 }));
 
