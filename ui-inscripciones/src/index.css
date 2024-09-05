@@ -40,7 +40,6 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f4f4f8;
 }
 
 @media (prefers-color-scheme: light) {
