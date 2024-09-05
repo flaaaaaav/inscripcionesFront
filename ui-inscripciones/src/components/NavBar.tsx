@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CustomButton from './customButton';
 import theme from '../theme';
+import { Link } from 'react-router-dom';
 
 interface Props {
   window?: () => Window;
@@ -44,7 +45,9 @@ export default function DrawerAppBar(props: Props) {
           </ListItem>
         ))}
       </List>
-      <CustomButton colorVariant="white">INICIAR SESION</CustomButton>
+      <Link to="/login">
+        <CustomButton colorVariant="white">INICIAR SESION</CustomButton>
+      </Link>
       <CustomButton colorVariant="green">REGISTRARSE</CustomButton>
     </Box>
   );
@@ -71,16 +74,18 @@ export default function DrawerAppBar(props: Props) {
 
             
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}>
-              <CustomButton
-                colorVariant="white-navbar"
-                sx={{
-                  '&:hover': {
-                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                  },
-                }}
-              >
-                INICIAR SESION
-              </CustomButton>
+              <Link to="/login">
+                <CustomButton
+                  colorVariant="white-navbar"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    },
+                  }}
+                >
+                  INICIAR SESION
+                </CustomButton>
+              </Link>
               <CustomButton
                 colorVariant="green"
                 sx={{
