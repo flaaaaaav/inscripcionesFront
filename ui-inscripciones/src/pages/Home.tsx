@@ -1,10 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Auth } from '../auth';
-import Button from '@mui/material/Button'
-import CardCursos from '../components/cardCursos';
-import CustomButton from '../components/customButton';
-import NavBar from '../components/NavBar';
+/* import { useNavigate } from 'react-router-dom'; */
 import Requeriments from '../components/requeriments';
 import Training from '../components/training';
 import Banner from '../components/Banner';
@@ -13,7 +8,7 @@ import Projects from '../components/projects';
 
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
+/*   const navigate = useNavigate();
 
   const handleProfileClick = () => {
     const isLogged = localStorage.getItem('isLogged') === 'true';
@@ -21,9 +16,10 @@ const Home: React.FC = () => {
       navigate('/profile');
     } else {
       alert('Debes iniciar sesión para acceder al perfil.');
+      navigate('/login')
     }
   };
-
+ */
   return (
     <div style={{}}>
       {/* <button onClick={handleProfileClick}>Perfil de usuario</button> */}
