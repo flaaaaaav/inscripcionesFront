@@ -3,8 +3,8 @@ import { createTheme } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface Palette {
     custom: {
-      buttonWhiteText: string;
-      buttonWhiteBorder: string;
+      buttonWhiteText?: string;
+      buttonWhiteBorder?: string;
     };
   }
   interface PaletteOptions {
@@ -13,8 +13,20 @@ declare module '@mui/material/styles' {
       buttonWhiteBorder?: string;
     },
     formButton: {
-      background: "#34495E",
+      background?: string,
     }
+  }
+  interface TypographyVariants {
+    customSubtitle: React.CSSProperties;
+  }
+  interface TypographyVariantsOptions {
+    customSubtitle?: React.CSSProperties;
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    customSubtitle: true;
   }
 }
 
@@ -37,7 +49,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#4D4D4D',
-      secondary: '#777795',
+      secondary: '#777795'
     },
     custom: {
       buttonWhiteText: '#818C96',
@@ -48,7 +60,13 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: 'Raleway, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif',
+    fontFamily: 'Raleway, system-ui, Avenir, Helvetica, Arial, sans-serif',
+    customSubtitle: {
+      color: "#313131",
+      fontWeight: "600",
+      fontSize: "40px",
+      fontFamily: "Poppins, sans-serif"
+    }
   },
 });
 
