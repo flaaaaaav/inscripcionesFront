@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/Routes';
-import Footer from './components/footer';
+/* import Footer from './components/footer'; */
 import { Box } from '@mui/material';
-import DrawerAppBar from './components/NavBar';
+/* import DrawerAppBar from './components/NavBar'; */
 
 const App: React.FC = () => {
   return (
     <Router>
-      <DrawerAppBar />
+{/*       <DrawerAppBar /> */}
       <Box 
         sx={{ 
           display: 'flex', 
@@ -21,7 +21,7 @@ const App: React.FC = () => {
             <AppRoutes />
           </main>
         </Box>
-        <Footer />
+{/*         <Footer /> */}
       </Box>
     </Router>
   );
