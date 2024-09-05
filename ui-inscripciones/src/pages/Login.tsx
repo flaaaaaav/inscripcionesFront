@@ -4,7 +4,7 @@ import FormButton from "../components/FormButton";
 import theme from "../theme";
 import GoogleButton from "../components/GoogleButton";
 import { Link } from "react-router-dom";
-import LoginLayout from "../components/LoginLayout";
+import LoginLayout from "../layouts/LoginLayout";
 import IniciaConHr from "../components/IniciaConHr";
 
 export default function Login() {
