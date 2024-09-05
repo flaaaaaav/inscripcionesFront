@@ -42,6 +42,10 @@ html, body {
   font-family: 'Raleway', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
