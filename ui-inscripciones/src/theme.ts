@@ -11,7 +11,10 @@ declare module '@mui/material/styles' {
     custom?: {
       buttonWhiteText?: string;
       buttonWhiteBorder?: string;
-    };
+    },
+    formButton: {
+      background: "#34495E",
+    }
   }
 }
 
@@ -26,6 +29,7 @@ const theme = createTheme({
     },
     secondary: {
       main: '#fd661f',
+      light: '#FF8682'
     },
     background: {
       default: '#fffefe',
@@ -39,9 +43,12 @@ const theme = createTheme({
       buttonWhiteText: '#818C96',
       buttonWhiteBorder: '#C4C4C4',
     },
+    formButton: {
+      background: '#34495E',
+    }
   },
   typography: {
-    fontFamily: 'Raleway, system-ui, Avenir, Helvetica, Arial, sans-serif',
+    fontFamily: 'Raleway, Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif',
   },
 });
 
