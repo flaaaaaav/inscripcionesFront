@@ -11,6 +11,9 @@ export default function Banner() {
         position: "relative",
         display: "flex",
         justifyContent: "center",
+        height: { xs: "100vh", lg: "auto" }, 
+        alignItems: { xs: "center", lg: "flex-start" }, 
+        overflow: "hidden", 
       }}
     >
       <Container
@@ -26,16 +29,21 @@ export default function Banner() {
           paddingBottom: "0rem !important",
           position: "relative",
           zIndex: 1,
+          width: "100%",
+          height: "100%",
+          flexDirection: { xs: "column", lg: "row" }, 
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            height: "100%",
-            marginTop: "-4rem", // Mueve el contenedor 2 rem hacia arriba
+            justifyContent: { xs: "center", lg: "flex-start" }, 
+            alignItems: { xs: "center", lg: "flex-start" }, 
+            height: "80%",
+            marginTop: { xs: "0", lg: "-4rem" }, 
+            textAlign: { xs: "center", lg: "left" },
+            width: { xs: "100%", lg: "auto" }, 
           }}
         >
           <Typography
@@ -51,7 +59,7 @@ export default function Banner() {
               backgroundColor: "#fff",
               padding: "10px 25px",
               marginBottom: "0 !important",
-              
+              margin: { xs: "0 auto 1rem", lg: "0" }, 
             }}
           >
             Nunca pares de aprender
@@ -77,7 +85,8 @@ export default function Banner() {
               letterSpacing: "0.05em",
               boxShadow: "none",
               padding: "1rem 2rem 1rem 2rem",
-              '&:hover': { boxShadow: "none"}
+              '&:hover': { boxShadow: "none"},
+              marginTop: "1rem", 
             }}
             colorVariant={'orange'}
           >
@@ -90,7 +99,7 @@ export default function Banner() {
           alt="Banner"
           sx={{
             width: "400px",
-            display: { xs: "none", lg: "block" },
+            display: { xs: "none", lg: "block" }, 
           }}
         />
       </Container>

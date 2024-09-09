@@ -7,6 +7,7 @@ import Courses from '../components/courses';
 import Projects from '../components/projects';
 import DrawerAppBar from '../components/NavBar';
 import Footer from '../components/footer';
+import { Auth } from '../auth';
 
 
 const Home: React.FC = () => {
@@ -27,11 +28,12 @@ const Home: React.FC = () => {
       {/* <button onClick={handleProfileClick}>Perfil de usuario</button> */}
       <DrawerAppBar />
       <Banner />
+      {/* <Auth /> */}
       <Courses />
       <Projects />
       <Requeriments />
       <Training/>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     
 

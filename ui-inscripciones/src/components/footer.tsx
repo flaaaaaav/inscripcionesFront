@@ -23,6 +23,7 @@ const Footer: React.FC = () => {
         padding: '7rem 1rem 2rem 1rem',
         marginTop: 'auto', 
         margin: "0 auto",
+        paddingLeft: { xs: '2rem', lg: 'none' },
       }}
     >
       <Box 

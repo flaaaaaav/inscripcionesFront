@@ -6,6 +6,7 @@ import GoogleButton from "../components/GoogleButton";
 import { Link } from "react-router-dom";
 import LoginLayout from "../layouts/LoginLayout";
 import IniciaConHr from "../components/IniciaConHr";
+import { Auth } from "../auth";
 
 export default function Login() {
   const {secondary, text} = theme.palette;
@@ -40,11 +41,13 @@ export default function Login() {
             </Link>
           </Typography>
           <IniciaConHr />
-          <GoogleButton />
+          {/* <GoogleButton /> */}
+          <Auth />
         </Box>
         <Box sx={{display: {xs: "none", md: "block"}}}>
           <img src="./src/media/register-img.png" alt="Descripción de la imagen" style={{ width: "100%", height: 'auto' }} />
         </Box>
+        
       </LoginLayout>
     </>
   )

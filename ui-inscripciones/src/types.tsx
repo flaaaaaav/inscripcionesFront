@@ -7,4 +7,5 @@ export type UserDataType = {
   picture: string,
   sub: string,
   birthday: string,
+  rolId?: number;
 }

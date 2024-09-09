@@ -64,7 +64,8 @@ const Training: React.FC = () => {
             borderRadius: "24px",
             alignSelf: "center",
             order: { xs: 2, sm: 1 }, 
-            marginTop: { xs: '2rem', sm: '0' }
+            marginTop: { xs: '2rem', sm: '0' },
+            display: { xs: 'none', lg: 'flex' },
           }}
         >
           <img src="./src/media/training.png" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />

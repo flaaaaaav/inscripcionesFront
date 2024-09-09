@@ -5,7 +5,7 @@ import { AuthProvider } from './auth';
 import './index.css';
 import { ThemeProvider } from '@mui/material';
 import theme from './theme';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
@@ -14,7 +14,9 @@ if (rootElement) {
     <React.StrictMode>
       <AuthProvider>
         <ThemeProvider theme={theme}>
-          <App />
+          <Router>
+            <App />
+          </Router>
         </ThemeProvider>
       </AuthProvider>
     </React.StrictMode>

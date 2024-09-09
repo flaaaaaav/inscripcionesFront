@@ -16,7 +16,7 @@ const CardProyectos: React.FC<CardProyectosProps> = ({ image, title, text, butto
       <CardMedia
         component="img"
         image={image}
-        alt={title} sx={{width: "50px", margin: "0 auto"}}
+        alt={title} sx={{height: "50px", width: "50px", margin: "0 auto"}}
       />
       <CardContent>
         <Typography variant="h5" component="div" fontWeight={600} mb={1} sx={{color: theme.palette.primary.main}}>
@@ -26,7 +26,7 @@ const CardProyectos: React.FC<CardProyectosProps> = ({ image, title, text, butto
       variant="body2"
       color="#696984"
       fontWeight={500}
-      sx={{ lineHeight: '2' }} 
+      sx={{ lineHeight: '2', height: '75px', }} 
     >
       {text}
     </Typography>

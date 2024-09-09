@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { UserDataType } from './types';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
+import IniciaConHr from './components/IniciaConHr'; 
+import GoogleButton from './components/GoogleButton';
 
 const clientId = '27875311198-j2cbmbhmid8llm2bu30be5s8dljret50.apps.googleusercontent.com';
 
@@ -26,6 +29,8 @@ const Auth: React.FC = () => {
 
   const [isLogged, setIsLogged] = useState(false);
   const [userData, setUserData] = useState<UserDataType>(initialUser);
+  const [usuarios, setUsuarios] = useState<any[]>([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
@@ -35,6 +40,31 @@ const Auth: React.FC = () => {
       setIsLogged(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (isLogged) {
+      const fetchUsuarios = async () => {
+        try {
+          const response = await axios.get('http://localhost:8080/api/usuario/listar');
+          setUsuarios(response.data.content);
+          console.log('Usuarios fetched:', response.data.content);
+          
+          // Mostrar datos de usuario en la consola
+          console.log('User Data:', userData);
+
+          // Mostrar alerta con botón para activar la redirección
+          alert('Inicio de sesión exitoso. Haz clic en Aceptar para continuar.');
+          
+          // Redireccionar al índice cuando el usuario haga clic en Aceptar
+          navigate('/'); 
+        } catch (error) {
+          console.error('Error fetching usuarios:', error);
+        }
+      };
+
+      fetchUsuarios();
+    }
+  }, [isLogged, navigate, userData]);
 
   const login = useGoogleLogin({
     scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/user.birthday.read',
@@ -92,24 +122,11 @@ const Auth: React.FC = () => {
   return (
     <div>
       {!isLogged ? (
-        <button onClick={() => login()}>Inicia sesión con Google</button>
-      ) : (
-        <div>
-          <h2>Hola, {userData.name}</h2>
-          <img
-            src={userData.picture}
-            alt="Profile"
-            style={{
-              width: '50px',
-              height: '50px',
-              borderRadius: '50%',
-              objectFit: 'cover',
-            }}
-          />
-          <p>Fecha de Nacimiento: {userData.birthday}</p>
-          <br />
-          <button onClick={handleLogout}>Logout</button>
+        <div onClick={() => login()}> 
+          <GoogleButton />
         </div>
+      ) : (
+        <></>
       )}
     </div>
   );

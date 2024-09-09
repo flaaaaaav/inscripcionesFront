@@ -1,14 +1,38 @@
 import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import SearchOffIcon from '@mui/icons-material/SearchOff';
+import CustomButton from '../components/customButton';
+import theme from '../theme';
 
 const NotFound: React.FC = () => {
   return (
-    <div>
-      <h1>404 - Página No Encontrada</h1>
-      <p>La página que estás buscando no existe.</p>
-      <a href="/">
-        <button>inicio</button>
-      </a>
-    </div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      sx={{ marginTop: '10rem', mb: '7rem', textAlign: 'center' }}
+    >
+      <SearchOffIcon sx={{ fontSize: 80, color: theme.palette.primary.main }} />
+      <Typography variant="h2" sx={{ marginBottom: '1rem' }}>
+        Página no encontrada
+      </Typography>
+      <Typography variant="h6" fontSize= "16px" sx={{ marginBottom: '2rem' }}>
+        La página que estás buscando no existe.
+      </Typography>
+      <CustomButton
+          colorVariant="green"
+          sx={{
+            '&:hover': {
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            },
+            marginBottom: '0.5rem',
+            minWidth: 'auto', 
+          }}
+        >
+          Volver al inicio
+        </CustomButton>
+    </Box>
   );
 };
 

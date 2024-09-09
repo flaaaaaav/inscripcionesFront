@@ -20,13 +20,24 @@ const CardCursos: React.FC<CardCursosProps> = ({ title, subtitle, description, i
   return (
     <Card 
       sx={{ 
-        maxWidth: 348, 
+        maxWidth: "320px", 
         borderRadius: "16px", 
         backgroundColor: theme.palette.background.paper, 
         boxShadow: "none" ,
       }}
     >
-      <CardMedia component="img" width="auto" image={imageUrl} alt={title} />
+ <CardMedia
+  component="img"
+  image={imageUrl}
+  alt={title}
+  sx={{
+    width: '100%',           
+    height: 200,             
+    objectFit: 'cover',      
+    borderRadius: '8px',     
+  }}
+/>
+
       <CardContent>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
           <Typography variant="body2" color={theme.palette.text.secondary}>
@@ -42,9 +53,22 @@ const CardCursos: React.FC<CardCursosProps> = ({ title, subtitle, description, i
         <Typography gutterBottom variant="h6" component="div" color={theme.palette.primary.main} fontWeight="300">
           {subtitle}
         </Typography>
-        <Typography variant="body2" color={theme.palette.text.primary} marginBottom={1} marginTop={2}>
-          {description}
-        </Typography>
+        <Typography
+  variant="body2"
+  color={theme.palette.text.primary}
+  marginBottom={1}
+  marginTop={2}
+  sx={{
+    height: '40px',           
+    overflow: 'hidden',       
+    textOverflow: 'ellipsis', 
+    display: '-webkit-box',    
+    WebkitLineClamp: 3,       
+    WebkitBoxOrient: 'vertical',
+  }}
+>
+  {description}
+</Typography>
       </CardContent>
       <CardActions>
         <CustomButton colorVariant="green" onClick={onButtonClick}>

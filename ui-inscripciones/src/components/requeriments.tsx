@@ -113,11 +113,11 @@ const Requeriments: React.FC = () => {
           justifyContent="center" 
           alignItems="center" 
           sx={{
-           /* backgroundColor: "#d2e6e4", */
             borderRadius: "24px",
             alignSelf: "center",
             order: { xs: 2, sm: 2 }, 
-            marginTop: { xs: '2rem', sm: '0' }
+            marginTop: { xs: '2rem', sm: '0' },
+            display: { xs: 'none', lg: 'flex' },
           }}
         >
           <img src="./src/media/requeriments1.jpg" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />
