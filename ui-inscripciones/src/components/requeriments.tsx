@@ -4,9 +4,9 @@ import theme from '../theme';
 
 const Requeriments: React.FC = () => {
   const iconSrcs = [
-    './src/media/requeriments-icon-1.jpg',
-    './src/media/requeriments-icon-2.jpg',
-    './src/media/requeriments-icon-3.jpg',
+    '/media/requeriments-icon-1.jpg',
+    '/media/requeriments-icon-2.jpg',
+    '/media/requeriments-icon-3.jpg',
   ];
 
   const requisitos = [
@@ -120,7 +120,7 @@ const Requeriments: React.FC = () => {
             display: { xs: 'none', lg: 'flex' },
           }}
         >
-          <img src="./src/media/requeriments1.jpg" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />
+          <img src="/media/requeriments1.jpg" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />
         </Box>
       </Box>
     </Box>

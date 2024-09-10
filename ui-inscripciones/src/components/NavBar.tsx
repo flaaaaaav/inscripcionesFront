@@ -97,7 +97,7 @@ export default function DrawerAppBar(props: Props) {
       <Toolbar sx={{ paddingLeft: "0 !important", paddingRight: "0 !important" }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '1000px', margin: '0 auto', padding: '0 1rem' }}>
      
-          <Box component="img" src="./src/media/logo-navbar.png" alt="Logo" sx={{ width: 'auto', display: { xs: 'block', lg: 'block' }, margin: { xs: '0 auto', lg: '0' } }} />
+          <Box component="img" src="/media/logo-navbar.png" alt="Logo" sx={{ width: 'auto', display: { xs: 'block', lg: 'block' }, margin: { xs: '0 auto', lg: '0' } }} />
 
           <Box sx={{ display: { xs: 'none', lg: 'flex' }, gap: '2rem' }}>
           {navItems.map((item) => (
@@ -222,7 +222,7 @@ export default function DrawerAppBar(props: Props) {
   }}
 >
   <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-    <Box component="img" src="./src/media/logo-navbar.png" alt="Logo" sx={{ width: 'auto' }} />
+    <Box component="img" src="/media/logo-navbar.png" alt="Logo" sx={{ width: 'auto' }} />
   </Box>
   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
   {navItems.map((item) => (

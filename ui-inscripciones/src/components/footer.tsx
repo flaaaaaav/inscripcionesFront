@@ -4,8 +4,8 @@ import theme from '../theme';
 
 const Footer: React.FC = () => {
   const contactItems = [
-    { icon: './src/media/phone.png', text: 'Tel: +54 9 110303456' },
-    { icon: './src/media/email.png', text: 'Email: info@puntoyaprende.com' },
+    { icon: '/media/phone.png', text: 'Tel: +54 9 110303456' },
+    { icon: '/media/email.png', text: 'Email: info@puntoyaprende.com' },
   ];
 
   const categorias = ['Python', 'Diseño UX/UI', 'JS', 'HTML y CSS'];
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
 
        
         <Box >
-          <img src="./src/media/logo-footer.png" alt="Punto&Aprende" style={{ width: 'auto', marginBottom: '20px' }} />
+          <img src="/media/logo-footer.png" alt="Punto&Aprende" style={{ width: 'auto', marginBottom: '20px' }} />
           <List sx={{ padding: 0 }}> 
             {contactItems.map((item, index) => (
               <ListItem key={index} sx={{ padding: 0, marginBottom: '10px' }}> 

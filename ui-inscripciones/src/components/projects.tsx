@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
         </Typography>
 
         <Box sx={{ textAlign: 'center', mt: 2, ml: '15rem', marginTop: '0 !important' }}>
-          <img src="./src/media/title-line-orange.png" alt="Decorative Line" style={{ width: '100%', maxWidth: '200px' }} />
+          <img src="/media/title-line-orange.png" alt="Decorative Line" style={{ width: '100%', maxWidth: '200px' }} />
         </Box>
       </Box>
 

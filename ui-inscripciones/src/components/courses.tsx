@@ -49,7 +49,7 @@ const Courses: React.FC = () => {
 
           {/* Imagen debajo del título */}
           <Box sx={{ textAlign: 'center', mt: 2, ml: { xs: '10rem', lg: '35rem' }, marginTop: '0 !important' }}>
-            <img src="./src/media/title-line.png" alt="Decorative Line" style={{ width: '100%', maxWidth: '200px' }} />
+            <img src="/media/title-line.png" alt="Decorative Line" style={{ width: '100%', maxWidth: '200px' }} />
           </Box>
         </Box>
 

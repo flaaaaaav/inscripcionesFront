@@ -14,7 +14,7 @@ const StyledGoogleButton = styled(MUIButton)(() => ({
 export default function GoogleButton({ ...props }: GoogleButtonProps) {
   return (
     <StyledGoogleButton {...props}>
-      <img src="./src/media/google-icon.png" alt="Google login" />
+      <img src="/media/google-icon.png" alt="Google login" />
     </StyledGoogleButton>
   );
 }

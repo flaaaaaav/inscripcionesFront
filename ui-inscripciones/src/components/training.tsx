@@ -4,9 +4,9 @@ import theme from '../theme';
 
 const Training: React.FC = () => {
   const iconSrcs = [
-    './src/media/requeriments-icon-1.jpg',
-    './src/media/requeriments-icon-2.jpg',
-    './src/media/requeriments-icon-3.jpg',
+    '/media/requeriments-icon-1.jpg',
+    '/media/requeriments-icon-2.jpg',
+    '/media/requeriments-icon-3.jpg',
   ];
 
   const requisitos = [
@@ -68,7 +68,7 @@ const Training: React.FC = () => {
             display: { xs: 'none', lg: 'flex' },
           }}
         >
-          <img src="./src/media/training.png" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />
+          <img src="/media/training.png" alt="Descripción de la imagen" style={{ maxWidth: '70%', height: 'auto' }} />
         </Box>
         <Box 
           flex={1} 
