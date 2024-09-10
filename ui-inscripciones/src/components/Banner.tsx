@@ -1,7 +1,6 @@
 import { Box, CardMedia, Container, Typography } from '@mui/material';
 import theme from '../theme';
 import CustomButton from './customButton';
-import banner from '../src/media/bannerImgedit.png'
 
 export default function Banner() {
   return (
@@ -96,7 +95,7 @@ export default function Banner() {
         </Box>
         <CardMedia
           component="img"
-          image={banner}
+          image='/media/bannerImgedit.png'
           alt="Banner"
           sx={{
             width: "400px",
