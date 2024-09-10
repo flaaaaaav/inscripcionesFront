@@ -3,6 +3,7 @@ import { Typography, Box, Button } from '@mui/material';
 import axios from 'axios';
 import CardProyectos from './cardProyectos';
 import theme from '../theme';
+import api from '../utils/axiosConfig';
 
 interface Proyecto {
   id: number;
@@ -18,7 +19,7 @@ const Projects: React.FC = () => {
 
   const fetchProyectos = async (limit: number) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/proyecto/listar`, {
+      const response = await api.get(`/api/proyecto/listar`, {   // Usar la ruta relativa
         params: { limit },
       });
       console.log('Respuesta del servidor:', response.data);

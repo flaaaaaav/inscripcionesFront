@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import IniciaConHr from './components/IniciaConHr'; 
 import GoogleButton from './components/GoogleButton';
+import api from './utils/axiosConfig';
 
 const clientId = '27875311198-j2cbmbhmid8llm2bu30be5s8dljret50.apps.googleusercontent.com';
 
@@ -45,7 +46,7 @@ const Auth: React.FC = () => {
     if (isLogged) {
       const fetchUsuarios = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/usuario/listar');
+          const response = await api.get('/api/usuario/listar');
           setUsuarios(response.data.content);
           console.log('Usuarios fetched:', response.data.content);
           
@@ -97,7 +98,7 @@ const Auth: React.FC = () => {
         setUserData(userDataWithBirthday);
         setIsLogged(true);
 
-        await axios.post('http://localhost:8080/api/auth/login', {
+        await api.post('/api/auth/login', {
           nombre: userDataWithBirthday.given_name,
           apellido: userDataWithBirthday.family_name,
           email: userDataWithBirthday.email,

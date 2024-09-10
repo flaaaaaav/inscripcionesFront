@@ -3,6 +3,8 @@ import { Box, Button, Typography, IconButton, Table, TableBody, TableCell, Table
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
+import api from '../utils/axiosConfig';
+
 
 interface CursoDTO {
   id: number;
@@ -34,7 +36,7 @@ const CoursesEdit: React.FC = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/curso/listar');
+      const response = await api.get('/api/curso/listar');
       setCursos(response.data.content); 
     } catch (error) {
       console.error('Error al obtener los cursos', error);
@@ -43,7 +45,7 @@ const CoursesEdit: React.FC = () => {
 
   const fetchMentores = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/mentor/listar');
+      const response = await api.get('/api/mentor/listar');
       setMentores(response.data.content.map((mentor: any) => ({
         id: mentor.id,
         nombreCompleto: `${mentor.nombreUsuario} ${mentor.apellidoUsuario}`,
@@ -55,7 +57,7 @@ const CoursesEdit: React.FC = () => {
 
   const fetchOngs = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/ong/listar');
+      const response = await api.get('/api/ong/listar');
       setOngs(response.data.content.map((ong: any) => ({
         id: ong.id,
         nombre: ong.nombre,
@@ -72,7 +74,7 @@ const CoursesEdit: React.FC = () => {
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:8080/api/curso/borrar/${id}`);
+      await api.delete(`/api/curso/borrar/${id}`);
       fetchCourses();
     } catch (error) {
       console.error('Error al eliminar el curso', error);
@@ -93,7 +95,7 @@ const CoursesEdit: React.FC = () => {
   const handleSave = async () => {
     if (editCourse) {
       try {
-        await axios.put(`http://localhost:8080/api/curso/editar/${editCourse.id}`, editCourse);
+        await api.put(`/api/curso/editar/${editCourse.id}`, editCourse);
         fetchCourses();
         handleClose();
       } catch (error) {

@@ -4,6 +4,7 @@ import axios from 'axios';
 import theme from '../theme';
 import CustomButton from './customButton';
 import CardCursos from './cardCursos';
+import api from '../utils/axiosConfig';
 
 const Courses: React.FC = () => {
   const [courses, setCourses] = useState<any[]>([]);  
@@ -11,7 +12,7 @@ const Courses: React.FC = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/curso/listar');
+        const response = await api.get('/api/curso/listar');
         setCourses(response.data.content);  
       } catch (error) {
         console.error('Error fetching courses:', error);

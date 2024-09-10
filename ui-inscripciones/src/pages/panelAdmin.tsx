@@ -8,6 +8,7 @@ import CrearCurso from '../components/crearCurso';
 import CoursesEdit from '../components/coursesEdit';
 import EditarUsuarios from '../components/editarUsuario';
 import axios from 'axios';
+import api from '../utils/axiosConfig';
 
 interface Usuario {
   id: number;
@@ -43,7 +44,7 @@ const PanelAdmin: React.FC = () => {
 
     const fetchUsuarios = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/usuario/listar');
+        const response = await api.get('/api/usuario/listar');
         setUsuarios(response.data.content);
       } catch (error) {
         console.error('Error fetching usuarios:', error);

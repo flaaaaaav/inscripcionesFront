@@ -3,6 +3,7 @@ import { Box, Button, Container, IconButton, Table, TableBody, TableCell, TableC
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
+import api from '../utils/axiosConfig';
 
 interface Proyecto {
   id: number;
@@ -26,7 +27,7 @@ const EditarProyectos: React.FC = () => {
   useEffect(() => {
     const fetchProyectos = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/proyecto/listar');
+        const response = await api.get('/api/proyecto/listar');
         setProyectos(response.data);
       } catch (error) {
         console.error('Error fetching proyectos:', error);
@@ -63,7 +64,7 @@ const EditarProyectos: React.FC = () => {
   const handleEdit = async () => {
     if (selectedProyecto) {
       try {
-        await axios.put(`http://localhost:8080/api/proyecto/editar/${selectedProyecto.id}`, formData);
+        await api.put(`/api/proyecto/editar/${selectedProyecto.id}`, formData);
         setProyectos(proyectos.map(proyecto => proyecto.id === selectedProyecto.id ? { ...proyecto, ...formData } : proyecto));
         handleCloseDialog();
       } catch (error) {
@@ -74,7 +75,7 @@ const EditarProyectos: React.FC = () => {
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:8080/api/proyecto/borrar/${id}`);
+      await api.delete(`/api/proyecto/borrar/${id}`);
       setProyectos(proyectos.filter(proyecto => proyecto.id !== id));
     } catch (error) {
       console.error('Error deleting proyecto:', error);

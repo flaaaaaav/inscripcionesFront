@@ -3,6 +3,8 @@ import { Box, Button, Container, IconButton, Table, TableBody, TableCell, TableC
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
+import api from '../utils/axiosConfig';
+
 
 interface Usuario {
   id: number;
@@ -29,7 +31,7 @@ const EditarUsuarios: React.FC = () => {
 
   const fetchUsuarios = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/usuario/listar');
+      const response = await api.get('/api/usuario/listar');
       setUsuarios(response.data.content);
     } catch (error) {
       console.error('Error fetching usuarios:', error);
@@ -69,7 +71,7 @@ const EditarUsuarios: React.FC = () => {
   const handleEdit = async () => {
     if (selectedUsuario) {
       try {
-        await axios.put(`http://localhost:8080/api/usuario/editar/${selectedUsuario.id}`, {
+        await api.put(`/api/usuario/editar/${selectedUsuario.id}`, {
           ...formData,
           id: selectedUsuario.id
         });
@@ -83,7 +85,7 @@ const EditarUsuarios: React.FC = () => {
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:8080/api/usuario/borrar/${id}`);
+      await api.delete(`/api/usuario/borrar/${id}`);
       await fetchUsuarios();
     } catch (error) {
       console.error('Error deleting usuario:', error);

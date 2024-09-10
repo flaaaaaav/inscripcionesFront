@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import UploadWidget from '../components/uploadWidget'; 
+import api from '../utils/axiosConfig';
 
 const EditarCursos: React.FC = () => {
   const [cursos, setCursos] = useState<any[]>([]);
@@ -19,7 +20,7 @@ const EditarCursos: React.FC = () => {
   useEffect(() => {
     const fetchCursos = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/curso/listar');
+        const response = await api.get('/api/curso/listar');
         setCursos(response.data);
       } catch (error) {
         console.error('Error fetching cursos:', error);
@@ -33,7 +34,7 @@ const EditarCursos: React.FC = () => {
   useEffect(() => {
     const fetchMentores = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/mentor/listar');
+          const response = await api.get('/api/mentor/listar');
           if (response.data && response.data.content) {
             setMentores(
               response.data.content.map((mentor: { id: number; nombreUsuario: string; apellidoUsuario: string }) => ({
@@ -61,7 +62,7 @@ const EditarCursos: React.FC = () => {
   useEffect(() => {
     const fetchOngs = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/ong/listar');
+          const response = await api.get('/api/ong/listar');
           if (response.data && response.data.content) {
             setOngs(
               response.data.content.map((ong: { id: number; nombre: string }) => ({
@@ -109,12 +110,12 @@ const EditarCursos: React.FC = () => {
  
   const handleEditSubmit = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/api/curso/actualizar/${selectedCurso.id}`, selectedCurso);
+      const response = await api.put(`/api/curso/actualizar/${selectedCurso.id}`, selectedCurso);
       console.log('Curso actualizado:', response.data);
       alert('Curso actualizado exitosamente');
       setOpenDialog(false);
       setSelectedCurso(null);
-      const responseCursos = await axios.get('http://localhost:8080/api/curso/listar');
+      const responseCursos = await api.get('/api/curso/listar');
       setCursos(responseCursos.data);
     } catch (error) {
       console.error('Error al actualizar el curso:', error);
@@ -125,9 +126,9 @@ const EditarCursos: React.FC = () => {
   
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:8080/api/curso/eliminar/${id}`);
+      await api.delete(`/api/curso/eliminar/${id}`);
       alert('Curso eliminado exitosamente');
-      const responseCursos = await axios.get('http://localhost:8080/api/curso/listar');
+      const responseCursos = await api.get('/api/curso/listar');
       setCursos(responseCursos.data);
     } catch (error) {
       console.error('Error al eliminar el curso:', error);
