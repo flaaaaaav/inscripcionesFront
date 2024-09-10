@@ -3,7 +3,7 @@ import { UserDataType } from './types';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
-import IniciaConHr from './components/IniciaConHr'; 
+// import IniciaConHr from './components/IniciaConHr'; 
 import GoogleButton from './components/GoogleButton';
 import api from './utils/axiosConfig';
 
@@ -30,8 +30,8 @@ const Auth: React.FC = () => {
 
   const [isLogged, setIsLogged] = useState(false);
   const [userData, setUserData] = useState<UserDataType>(initialUser);
-  const [usuarios, setUsuarios] = useState<any[]>([]);
-  const navigate = useNavigate(); 
+  const [, setUsuarios] = useState<any[]>([]);
+    const navigate = useNavigate(); 
 
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
@@ -113,12 +113,12 @@ const Auth: React.FC = () => {
     onError: (error) => console.log('Login failed:', error),
   });
 
-  const handleLogout = () => {
-    localStorage.removeItem('userData');
-    localStorage.removeItem('isLogged');
-    setIsLogged(false);
-    setUserData(initialUser);
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('userData');
+  //   localStorage.removeItem('isLogged');
+  //   setIsLogged(false);
+  //   setUserData(initialUser);
+  // };
 
   return (
     <div>

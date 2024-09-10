@@ -5,7 +5,7 @@ import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound';
 import ProtectedRoute from './ProtectedRoute';
 import Login from '../pages/Login';
-import AdminPanel from '../pages/adminPanel';
+// import AdminPanel from '../pages/adminPanel';
 import PanelAdmin from '../pages/panelAdmin';
 
 const AppRoutes: React.FC = () => {

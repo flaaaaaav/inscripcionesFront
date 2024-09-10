@@ -6,8 +6,8 @@ import Banner from '../components/Banner';
 import Courses from '../components/courses';
 import Projects from '../components/projects';
 import DrawerAppBar from '../components/NavBar';
-import Footer from '../components/footer';
-import { Auth } from '../auth';
+// import Footer from '../components/footer';
+// import { Auth } from '../auth';
 
 
 const Home: React.FC = () => {

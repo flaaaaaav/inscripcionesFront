@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, Box, Button } from '@mui/material';
-import axios from 'axios';
+// import axios from 'axios';
 import CardProyectos from './cardProyectos';
 import theme from '../theme';
 import api from '../utils/axiosConfig';

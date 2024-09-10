@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import axios from 'axios';
 import theme from '../theme';
 import CustomButton from './customButton';
 import CardCursos from './cardCursos';

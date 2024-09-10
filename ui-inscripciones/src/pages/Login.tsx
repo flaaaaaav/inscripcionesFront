@@ -2,7 +2,7 @@ import { Box, Typography, FormControlLabel, Checkbox } from "@mui/material";
 import CustomInput from "../components/CustomInput";
 import FormButton from "../components/FormButton";
 import theme from "../theme";
-import GoogleButton from "../components/GoogleButton";
+// import GoogleButton from "../components/GoogleButton";
 import { Link } from "react-router-dom";
 import LoginLayout from "../layouts/LoginLayout";
 import IniciaConHr from "../components/IniciaConHr";

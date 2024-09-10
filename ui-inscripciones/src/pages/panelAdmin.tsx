@@ -7,7 +7,7 @@ import CrearProyectos from '../components/crearProyectos';
 import CrearCurso from '../components/crearCurso';
 import CoursesEdit from '../components/coursesEdit';
 import EditarUsuarios from '../components/editarUsuario';
-import axios from 'axios';
+// import axios from 'axios';
 import api from '../utils/axiosConfig';
 
 interface Usuario {

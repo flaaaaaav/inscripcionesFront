@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {
   Button, Container, TextField, MenuItem, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle
 } from '@mui/material';
-import axios from 'axios';
 import UploadWidget from '../components/uploadWidget';
+import api from '../utils/axiosConfig';
+
 
 const CrearCurso: React.FC = () => {
   const [mentores, setMentores] = useState<{ id: number; nombreCompleto: string }[]>([]);
@@ -29,7 +30,7 @@ const CrearCurso: React.FC = () => {
   useEffect(() => {
     const fetchMentores = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/mentor/listar');
+          const response = await api.get('/api/mentor/listar');
           if (response.data && response.data.content) {
             setMentores(
               response.data.content.map((mentor: { id: number; nombreUsuario: string; apellidoUsuario: string }) => ({
@@ -57,7 +58,7 @@ const CrearCurso: React.FC = () => {
   useEffect(() => {
     const fetchOngs = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/api/ong/listar');
+          const response = await api.get('/api/ong/listar');
           if (response.data && response.data.content) {
             setOngs(
               response.data.content.map((ong: { id: number; nombre: string }) => ({
@@ -104,7 +105,7 @@ const CrearCurso: React.FC = () => {
   
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/curso/crear', curso);
+      const response = await api.post('/api/curso/crear', curso);
       console.log('Curso creado:', response.data);
       alert('Curso creado exitosamente');
       setCurso({

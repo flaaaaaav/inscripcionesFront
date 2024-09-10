@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, TextField, Button, Typography, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import axios from 'axios';
-import UploadWidget from '../components/uploadWidget'; 
+import UploadWidget from '../components/uploadWidget';
+import api from '../utils/axiosConfig'; 
 
 const CrearProyectos: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +24,7 @@ const CrearProyectos: React.FC = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/proyecto/crear', proyectoData);
+      const response = await api.post('/api/proyecto/crear', proyectoData);
       console.log('Proyecto creado:', response.data);
       setNombre('');
       setDescripcion('');

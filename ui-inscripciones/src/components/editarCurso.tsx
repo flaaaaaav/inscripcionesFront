@@ -4,7 +4,6 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import axios from 'axios';
 import UploadWidget from '../components/uploadWidget'; 
 import api from '../utils/axiosConfig';
 
